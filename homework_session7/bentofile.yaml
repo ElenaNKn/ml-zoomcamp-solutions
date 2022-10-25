@@ -1,0 +1,10 @@
+service: "service_cool2.py:svc"  
+labels:
+    owner: kniazeva
+    stage: dev
+include:
+- "*.py"  
+python:
+    packages:  
+    - xgboost
+    - sklearn
