@@ -40,7 +40,7 @@ The repository contains the next files and folders:
 * `train.py` - a python script to train the model    
 * `predict.py` - a python script to create a web service on the base of developed final ML model    
 * `Dockerfile` - to containerize the developed model    
-* `predict_test.py` - a a python file to test and work with the localy deployed  model    
+* `predict_test.py` - a a python file to test and work with the locally deployed  model    
 * `predict_test_cloud.py` - a python file to test and work with the model, deployed to Google Cloud Platform    
    
 ## **Dataset description**    
@@ -62,14 +62,19 @@ Columns of the dataset are listed below:
 
 ## **Virtual environment**   
    
-Virtual environment of the project is provided by `Pipfile` and `Pipfile.lock`. These files contain all information about libraries and dependencies for the project. To create a virtual environment with libraries and dependencies required for the project, one should install `pipenv` library:   
-`pip install pipenv` 
-Then it's nesseccary to clone this repository from GitHub, open a terminal in the folder with this repository, and run the following commands:   
+Virtual environment of the project is provided by `Pipfile` and `Pipfile.lock`. These files contain all information about libraries and dependencies for the project. To create a virtual environment with libraries and dependencies required for the project, one should install `pipenv` library:  
+   
+`pip install pipenv`   
+   
+Then it's necessary to clone this repository from GitHub, open a terminal in the folder with this repository, and run the following commands:   
+   
 `pipenv install`   # to install project virtual environment
 `pipenv shell`     # to activate virtual environment
 
-This virtual environment is also used for `notebook.ipynb` file. To open this file one should enter all previous commands and then start Jupyter Notebook by entering the next commant in a terminal (command window):   
+This virtual environment is also used for `notebook.ipynb` file. To open this file one should enter all previous commands and then start Jupyter Notebook by entering the next command in a terminal (command window):  
+    
 `pipenv run jupyter notebook`   
+   
 Then you should find `notebook.ipynb` file and open it.
 
 ## **Data preparation**    
@@ -105,21 +110,23 @@ Random forest classifier model is selected as a final model. It's parameters:
 `n_estimators = 148`,   
 `max_depth = 9`,   
 `min_samples_leaf = 3`   
-The model was trained on test+validation dataset and showed ROC-AUC score of 0.835 on test dataset   
+The model was trained on test+validation dataset and showed ROC-AUC score of 0.835 on test dataset.   
 
 ## **Running a web service in a local server**   
       
-Developed filnal model is implemented in a web service. To run it it's nesseccary to install `Docker`, create a container (which contains all system dependencies, libraries, scripts and others) and run it.   
+Developed final model is implemented in a web service. To run it it's necessary to install `Docker`, create a container (which contains all system dependencies, libraries, scripts and others) and run it.   
    
-`Docker` may be installed from the oficial site https://www.docker.com/
+`Docker` may be installed from the official site https://www.docker.com/
 
 File `Dockerfile` of the current repository (or cloned to your PC) contains all specifications to a container to be built: python, virtual environment, scripts and model file etc. To build a container one should start a `Docker`, open a terminal or command window and enter the next command:   
+   
 `docker build -t course-popularity .`   
    
 Ones your docker container is built, you can run it with the next command:   
+   
 `docker run -it --rm -p 9696:9696 course-popularity:latest`   
    
-The result of the command is to be running local server, like shown at tha image below   
+The result of the command is to be running local server, like shown at the image below:   
    
 <br />
    
@@ -127,10 +134,11 @@ The result of the command is to be running local server, like shown at tha image
    
 <br />
    
-Then you may check the result of web application's work. You should open other command window (or terminal), activate virtual environment (as described above: `pipenv shell`) and run a script `predict_test.py` with the next command:     
+Then you may check the result of web application's work. You should open other command window (or terminal), activate virtual environment (as described above: `pipenv shell`) and run a script `predict_test.py` with the next command:    
+    
 `pipenv run predict_test.py`   
    
-`predict_test.py` script send to local server a course with the next features:   
+A script `predict_test.py` sends to the local server a course with the next features:   
 {'course_id' : 1009622,   
  'is_paid' : 'yes',   
  'price' : 80,   
@@ -143,13 +151,13 @@ The result of script's work should be as follows:
    
 <br />
    
-<img src="images/local_serv_result.png" width="800" height="300" alt="predict_test result"/>
+<img src="images/local_serv_result.png" width="800" height="250" alt="predict_test result"/>
    
 <br />
    
 The results obtained mean that the course will be popular with the probability 0.633   
    
-You can also change features in `predict_test.py` and calculate popularity of agbitrary course.   
+You can also change features in `predict_test.py` and calculate popularity of an arbitrary course.   
    
 ## **Running a web service in a cloud**   
    
@@ -169,7 +177,7 @@ As result of `docker push ... ` command you container appeared in Google Contain
    
 <br />
       
-<img src="images/GCP_container_image.png" width="800" height="600" alt="container_image"/>
+<img src="images/GCP_container_image.png" width="600" height="400" alt="container_image"/>
      
 <br />
    
@@ -177,11 +185,11 @@ The result of `gcloud run deploy ...` command will be a running server
    
 <br />
    
-<img src="images/GCP_service_run.png" width="800" height="300" alt="server"/>
+<img src="images/GCP_service_run.png" width="800" height="200" alt="server"/>
    
 <br />
 
-Web service is available on URL: https://popularity-server-srfockrmzq-lm.a.run.app/predict   
+Web service is available on URL: https://popularity-server-srfockrmzq-lm.a.run.app/predict  The page can’t be loaded, because this URL ends with method, but the URL works perfect within a script.
    
 You may check the result of web application's work. You should open command window (or terminal), activate virtual environment (as described above: `pipenv shell`) and run a script `predict_test_cloud.py` with the next command:     
 `pipenv run predict_test_cloud.py`   
@@ -199,13 +207,13 @@ The result of script's work should be as follows:  \
 
 <br />
    
-<img src="images/GCP_service_result.png" width="800" height="500" alt="predict_test_cloud result"/>
+<img src="images/GCP_service_result.png" width="600" height="350" alt="predict_test_cloud result"/>
    
 <br />
    
 The results obtained mean that the course will be popular with the probability 0.633   
    
-You can also change features in `predict_test_cloud.py` and calculate popularity of agbitrary course.  
+You can also change features in `predict_test_cloud.py` and calculate popularity of argbitrary course.  
 
 ## **Contacts**   
    
