@@ -14,8 +14,6 @@
    
 ## **About the project**   
    
-This project is developed as a midterm project in the frame of [Machine Learning Zoomcamp Course](hhttps://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp).   
-   
 This project is aimed to create a machine learning model for prediction of a popularity of an arbitrary course, which an author is going to place at Udemy learning platform. The author just needs to send to the model a few parameters to predict, whether the course will be popular:    
 * 'course_id' - arbitrary id of a course (int)    
 * 'is_paid' - 'yes' for paid course / 'no' for free course    
