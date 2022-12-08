@@ -1,4 +1,4 @@
-# **Prediction of udemy courses popularity**  
+# **Prediction of Udemy courses popularity**  
    
 ## **Table of contents:**  
    
