@@ -1,4 +1,3 @@
-# **Midterm Project of the mlzoomcamp course**  
 # **Prediction of udemy courses popularity**  
    
 ## **Table of contents:**  
