@@ -77,30 +77,30 @@ Virtual environments of the project are provided by files `Pipfile` and `Pipfile
 2. Clone the project repository from GitHub.
 
 3. Creation of virtual environment for model development and training.
-Open a terminal in the folder `notebook`, and run the following command:   
+    Open a terminal in the folder `notebook`, and run the following command:   
    
-`pipenv install`   # to install virtual environment for model development and training
+    `pipenv install`   # to install virtual environment for model development and training
 
-Now you can run `train.py` file with a command
+    Now you can run `train.py` file with a command
 
-`pipenv run python train.py`
+    `pipenv run python train.py`
 
-This virtual environment is also used for `notebook.ipynb` file. To open this file one should install virtual environment and then start Jupyter Notebook by entering the next command in a terminal (command window):  
+    This virtual environment is also used for `notebook.ipynb` file. To open this file one should install virtual environment and then start Jupyter Notebook by entering the next command in a terminal (command window):  
     
-`pipenv run jupyter notebook`   
+    `pipenv run jupyter notebook`   
    
-Then you should find `notebook.ipynb` file and open it.
+    Then you should find `notebook.ipynb` file and open it.
 
 4. Creation of virtual environment for model deployment.
-Open a terminal in the folder `predict_deployment`, and run the following command:   
+    Open a terminal in the folder `predict_deployment`, and run the following command:   
    
-`pipenv install`   # to install virtual environment for model deployment
+    `pipenv install`   # to install virtual environment for model deployment
 
-Now you can run `predict.py` file with a command
+    Now you can run `predict.py` file with a command
 
-`pipenv run python predict.py`
+    `pipenv run python predict.py`
 
-Files `predict_test.py` and `predict_test_cloud.py` may be run in a similar way.
+    Files `predict_test.py` and `predict_test_cloud.py` may be run in a similar way.
    
 ## **Development of ML-model**   
    
@@ -135,7 +135,7 @@ The result of the command is to be running local server, like shown at the image
    
 <br />
    
-<img src="images/local_serv.png" width="800" height="250" alt="docker run"/>
+<img src="images/local_serv.png" width="800" height="220" alt="docker run"/>
    
 <br />
    
@@ -143,7 +143,8 @@ Then you may check the result of web application's work. You should open other c
     
 `pipenv run python predict_test.py`   
    
-A script `predict_test.py` sends to the local server a low-alloy steel material with the next characteristics:   
+A script `predict_test.py` sends to the local server a low-alloy steel material with the next characteristics: 
+
     {
     "c": "0.12",
     "si": "0.36",
@@ -160,6 +161,7 @@ A script `predict_test.py` sends to the local server a low-alloy steel material 
     "nb_and_ti": "0",
     "temperature_celcius": "27"
     } 
+
 The result of script's work should be as follows:   
    
 <br />
@@ -188,7 +190,7 @@ As result of `docker push ... ` command you container appeared in Google Contain
    
 <br />
       
-<img src="images/GCP_container_image.png" width="600" height="400" alt="container_image"/>
+<img src="images/GCP_container_image.png" width="700" height="400" alt="container_image"/>
      
 <br />
    
@@ -206,6 +208,7 @@ You may check the result of web application's work. You should open command wind
 `pipenv run python predict_test_cloud.py`   
    
 `predict_test.py` script send to local server a course with the next features:   
+
     {
     "c": "0.12",
     "si": "0.36",
@@ -222,11 +225,12 @@ You may check the result of web application's work. You should open command wind
     "nb_and_ti": "0",
     "temperature_celcius": "27"
     } 
-The result of script's work should be as follows:  \
+
+The result of script's work should be as follows:  
 
 <br />
    
-<img src="images/GCP_service_result.png" width="600" height="300" alt="predict_test_cloud result"/>
+<img src="images/GCP_service_result.png" width="600" height="400" alt="predict_test_cloud result"/>
    
 <br /> 
    
