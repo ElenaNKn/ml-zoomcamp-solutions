@@ -230,7 +230,7 @@ The result of script's work should be as follows:
 
 <br />
    
-<img src="images/GCP_service_result.png" width="600" height="400" alt="predict_test_cloud result"/>
+<img src="images/GCP_service_result.png" width="700" height="300" alt="predict_test_cloud result"/>
    
 <br /> 
    
